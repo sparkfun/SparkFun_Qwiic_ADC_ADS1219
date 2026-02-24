@@ -11,15 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python runtime
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: 3.x
 
       - name: Install Python dependencies
-        run: pip install mkdocs-monorepo-plugin mkdocs-redirects mkdocs-with-pdf weasyprint mkdocs-git-authors-plugin mkdocs-git-revision-date-localized-plugin mkdocs-git-committers-plugin-2 setuptools
+        run: pip install mkdocs-monorepo-plugin mkdocs-redirects mkdocs-with-pdf weasyprint mkdocs-git-authors-plugin mkdocs-git-revision-date-localized-plugin setuptools
 
       # - name: Install Chrome
       #   run: sudo apt install google-chrome-stable
@@ -32,9 +32,5 @@ jobs:
         with:
           key: ${{ github.ref }}
           path: .cache
-
-      - name: Install Insiders build
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }} 
-        run: pip install --upgrade mkdocs-material
+        run: pip install mkdocs-material
       - run: mkdocs gh-deploy --force
