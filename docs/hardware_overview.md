@@ -29,7 +29,7 @@ The sole LED on this board is a red power status LED to indicate when the board 
 The board has eleven solder jumpers. The list below outlines the functionality of the three solder jumpers not related to setting the device's I<sup>2</sup>C address:
 
 * <b>LED</b> - The LED jumper completes the red power LED circuit and is CLOSED by default. Open this jumper to disable the power LED.
-* <b>I<sup>2</sup>C - The I<sup>2</sup>C jumper pulls the SDA and SCL signals to <b>3.3V</b> through a pair of <b>2.2K&ohm;</b> resistors. Open the three-way jumper completely to remove the pull-ups from the bus if needed.
+* <b>I<sup>2</sup>C</b> - The I<sup>2</sup>C jumper pulls the SDA and SCL signals to <b>3.3V</b> through a pair of <b>2.2K&ohm;</b> resistors. Open the three-way jumper completely to remove the pull-ups from the bus if needed.
 * <b>3V3-VDDA</b>  - The 3V3-VDDA jumper nets the ADS1219's digital and analog supply voltages together to both operate at <b>3.3V</b> and is CLOSED by default. Open this jumper to isolate the two voltages if you're supplying separate voltages for the analog and digital supplies.
  
 The other eight jumpers control the ADS1219's I<sup>2</sup>C address and are grouped into labels <b>A1</b> and <b>A0</b>. Each group has solder jumpers labeled <b>G</b> (Ground), <b>V</b> (3.3V), <b>D</b> (SDA) and <b>C</b> (SCL). By default, the board connects both A1 and A0 to Ground and sets the address to <b>0x40</b>. The table below outlines all available configurations and the resulting addresses.
@@ -40,83 +40,83 @@ The other eight jumpers control the ADS1219's I<sup>2</sup>C address and are gro
         <th>A0</th>
         <th>Address (Unshifted)</th>
     </tr>
-        <td>GND</td>
-        <td>GND</td>
+        <td>G (GND)</td>
+        <td>G (GND)</td>
         <td>0x40 (Default)</td>
     </tr>
     <tr>
-        <td>GND</td>
-        <td>3.3V</td>
+        <td>G (GND)</td>
+        <td>V (3.3V)</td>
         <td>0x41</td>
     </tr>
     <tr>
-        <td>GND</td>
-        <td>SDA</td>
+        <td>G (GND)</td>
+        <td>D (SDA)</td>
         <td>0x42</td>
     </tr>
     <tr>
-        <td>GND</td>
-        <td>SCL</td>
+        <td>G (GND)</td>
+        <td>C (SCL)</td>
         <td>0x43</td>
     </tr>
     <tr>
-        <td>3.3V</td>
-        <td>GND</td>
+        <td>V (3.3V)</td>
+        <td>G (GND)</td>
         <td>0x44</td>
     </tr>
     <tr>
-        <td>3.3V</td>
-        <td>3.3V</td>
+        <td>V (3.3V)</td>
+        <td>V (3.3V)</td>
         <td>0x45</td>
     </tr>
     <tr>
-        <td>3.3V</td>
-        <td>SDA</td>
+        <td>V (3.3V)</td>
+        <td>D (SDA)</td>
         <td>0x46</td>
     </tr>
     <tr>
-        <td>3.3V</td>
-        <td>SCL</td>
+        <td>V (3.3V)</td>
+        <td>C (SCL)</td>
         <td>0x47</td>
     </tr>
     <tr>
-        <td>SDA</td>
-        <td>GND</td>
+        <td>D (SDA)</td>
+        <td>G (GND)</td>
         <td>0x48</td>
     </tr>
     <tr>
-        <td>SDA</td>
-        <td>3.3V</td>
+        <td>D (SDA)</td>
+        <td>V (3.3V)</td>
         <td>0x49</td>
     </tr>
     <tr>
-        <td>SDA</td>
-        <td>SDA</td>
+        <td>D (SDA)</td>
+        <td>D (SDA)</td>
         <td>0x4A</td>
     </tr>
     <tr>
-        <td>SDA</td>
-        <td>SCL</td>
+        <td>D (SDA)</td>
+        <td>C (SCL)</td>
         <td>0x4B</td>
     </tr>
     <tr>
-        <td>SCL</td>
-        <td>GND</td>
+        <td>C (SCL)</td>
+        <td>G (GND)</td>
         <td>0x4C</td>
     </tr>
     <tr>
-        <td>SCL</td>
-        <td>3.3V</td>
+        <td>C (SCL)</td>
+        <td>V (3.3V)</td>
         <td>0x4D</td>
     </tr>
     <tr>
-        <td>SCL</td>
-        <td>SDA</td>
+        <td>C (SCL)</td>
+        <td>D (SDA)</td>
         <td>0x4E</td>
     </tr>
     <tr>
-        <td>SCL</td>
-        <td>SCL</td>
+        <td>C (SCL)</td>
+        <td>C (SCL)</td>
         <td>0x4F</td>
     </tr>
 </table>
